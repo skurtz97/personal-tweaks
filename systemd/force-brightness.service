@@ -1,0 +1,9 @@
+[Unit]
+Description=Force GNOME Display Brightness to 100%
+After=gnome-session.target
+PartOf=gnome-session.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/sleep 2
+ExecStart=/usr/bin/busctl --user set-property org.gnome.SettingsDaemon 
